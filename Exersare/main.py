@@ -58,4 +58,3 @@ for i in range(N):
 print("Afisare matrice : ",mat)
 print("\n")
 # --------------------------------- #
-print("End file")
