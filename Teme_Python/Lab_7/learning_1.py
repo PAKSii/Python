@@ -63,21 +63,28 @@ def cautare_nume(lst): # Optiune meniu 5
             print("\t\t",lst[i][2],end='')
     if gasit==0:
         print(f"Studentul cu numele <{nume}> nu exista in lista.\n")
-
-'''def studenti_promovati(lst): # Optiune meniu 6
-    print("Se afiseaza studentii promovati:\n")
-    suma=0
+def studenti_promovati(list): # Optiune meniu 6
+    media=[]
     for i in range(len(lst)):
-        print("\t\t",lst[i][2],end='')
-    for i in range(len(lst[i][2])):
-        lst[i][2]=int(lst[i][2])
-        suma+=int(lst[i][2])
-    return suma'''
+        note=[int(x) for x in lst[i][2].split(" ")]
+        med=(note[0]+note[1]+note[2])/3
+        note.clear()
+        media.append(med)
+    media_rot=[round(x,2) for x in media]
+    print('ID \t\t Nume Student \t\t Media')
+    print('------------------------------------------------')
+    for i in range(len(lst)):
+        print(lst[i][0],end='')
+        print("\t\t",lst[i][1],end='')
+        print("\t\t",media_rot[i])
 
 def info_autor(): # Optiune meniu 7
     print("Program realizat de Murarasu Matei - George, grupa 3111C")
+
 def end_program(): # Optiune meniu 8
     exit(0)
+
+#Inceperea programului principal
 print("\t\t\tM E N I U")
 menu={
 1:'1 - Incarcati informatii despre studenti din fisier',
@@ -120,10 +127,10 @@ while True:
         cautare_nume(lst)
         print("\nSelectati urmatoarea optiune: ")
         opt=int(input('opt='))
-    '''if opt==6:
+    if opt==6:
         studenti_promovati(lst)
         print("\nSelectati urmatoarea optiune: ")
-        opt=int(input('opt='))'''
+        opt=int(input('opt='))
     if opt==7:
         info_autor()
         print("\nSelectati urmatoarea optiune: ")
