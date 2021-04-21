@@ -71,7 +71,10 @@ def studenti_promovati(list): # Optiune meniu 6
         note.clear()
         media.append(med)
     media_rot=[round(x,2) for x in media]
+<<<<<<< HEAD
     print("Se afiseaza studentii promovati: \n")
+=======
+>>>>>>> da1541eeb33598f912b643f8eb3ffd555d628790
     print('ID \t\t Nume Student \t\t Media')
     print('------------------------------------------------')
     for i in range(len(lst)):
