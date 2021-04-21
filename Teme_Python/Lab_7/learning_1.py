@@ -1,6 +1,5 @@
 # Aplicatie Python
 # Lab.  S7 - Functii, meniuri si dictionare in Python
-# TODO : Optiunea 6 medii nu functioneaza
 def optiune():
     opt=int(input('opt='))
     return opt
@@ -52,9 +51,9 @@ def afis_studenti_note(lst): # Optiune meniu 4
 
 def cautare_nume(lst): # Optiune meniu 5
     gasit=0
-    nume=input("Dati numele studentului: ")
+    num=input("Dati numele studentului: ")
     for i in range(len(lst)):
-        if lst[i][1]==nume:
+        if num==lst[i][1]:
             print('ID \t\t Nume Student \t\t Note')
             print('------------------------------------------------')
             gasit=1
@@ -62,8 +61,8 @@ def cautare_nume(lst): # Optiune meniu 5
             print("\t\t",lst[i][1],end='')
             print("\t\t",lst[i][2],end='')
     if gasit==0:
-        print(f"Studentul cu numele <{nume}> nu exista in lista.\n")
-        
+        print(f"Studentul cu numele <{num}> nu exista in lista.\n")
+
 def studenti_promovati(list): # Optiune meniu 6
     media=[]
     for i in range(len(lst)):
