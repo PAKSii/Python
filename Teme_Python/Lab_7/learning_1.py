@@ -1,5 +1,8 @@
 # Aplicatie Python
 # Lab.  S7 - Functii, meniuri si dictionare in Python
+# Todo : Cautare dupa nume si prenume
+#       sortare a datelor : medii, alfabetica
+#       afisarea datelor la fiecare sortare
 def optiune():
     opt=int(input('opt='))
     return opt
@@ -51,17 +54,29 @@ def afis_studenti_note(lst): # Optiune meniu 4
 
 def cautare_nume(lst): # Optiune meniu 5
     gasit=0
-    num=input("Dati numele studentului: ")
-    for i in range(len(lst)):
-        if num==lst[i][1]:
-            print('ID \t\t Nume Student \t\t Note')
-            print('------------------------------------------------')
-            gasit=1
-            print(lst[i][0],end='')
-            print("\t\t",lst[i][1],end='')
-            print("\t\t",lst[i][2],end='')
-    if gasit==0:
-        print(f"Studentul cu numele <{num}> nu exista in lista.\n")
+    print("Dupa ce criteriu doriti sa cautati?\n")
+    print("1- Nume | 2- Prenume | 3- Datele Complete\n")
+    optiune_caut=int(input("Introduceti optiunea "))
+    '''if optiune_caut==1:
+        nume=input("Introduceti numele cautat: ")
+        for i in range(len(lst)):
+            for j in range(len(lst[i][1])):
+                if nume==lst[i][j]:
+                    print("a")
+    elif optiune_caut==2:
+        prenume=input("Introduceti prenumele cautat: ")'''
+    if optiune_caut==3:
+        date_complete=input("Dati numele studentului: ")
+        for i in range(len(lst)):
+            if date_complete==lst[i][1]:
+                print('ID \t\t Nume Student \t\t Note')
+                print('------------------------------------------------')
+                gasit=1
+                print(lst[i][0],end='')
+                print("\t\t",lst[i][1],end='')
+                print("\t\t",lst[i][2],end='')
+        if gasit==0:
+            print(f"Studentul cu numele <{date_complete}> nu exista in lista.\n")
 
 def studenti_promovati(list): # Optiune meniu 6
     media=[]
