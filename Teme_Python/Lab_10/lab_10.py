@@ -6,12 +6,12 @@
 #---------------#
 global poduri,ok
 def citire_fisier():
-    global numar
+    global numar,ins_start
     f=open('date.txt','rt')
     line=f.readline()
     numar=int(line)
-    line=f.readline()
-    Pozitie_start=line
+    line=f.readline
+    ins_start=line
     insule=[]
     while True:
         line=f.readline()
@@ -26,7 +26,7 @@ def citire_fisier():
         print("Datele din fisier au fost citite cu succes.\n")
 
 def citire_tastatura():
-    global numar
+    global numar,ins_start
     numar=int(input('Introduceti numarul de poduri:  '))
     ins_start=int(input('Tastati insula de la care doriti sa incepeti:  '))
     global poduri
@@ -45,26 +45,27 @@ def afisare():
 
 
 def Plimbare(insula_crt,k):
-    if numar==k:
+    global x,poduri,n
+    if n==k:
         print(x)
     else:
-        for i in range(0,n):
+        for i in range(n):
             if POSIBIL(i,k,insula_crt):
                 x[k]=i
                 if insula_crt==pod[i][0]:
-                    insule=pod[i][1]
+                    insule=poduri[i][1]
                 else:
-                    insule=pod[i][0]
-                Plimbare(ins,k+1)
+                    insule=poduri[i][0]
+                Plimbare(insule,k+1)
+    print()
 
-def POSIBIL(alfa,k,ins_crt):
-    global x,poduri
-    for j in range(0,k):
-        if x[j]==alfa:
+
+def POSIBIL(i,k,insula_crt):
+    global x,poduri,ins_start
+    for j in range(k):
+        if x[j]==i:
             return False
-        return poduri[alfa][0]==ins_crt or poduri[alfa][1]==ins_crt
-    for i in range(numar):
-        print(x[i])
+    return poduri[i][0]==insula_crt or poduri[i][1]==insula_crt
 
 def info_autor():
     print("Program realizat de Murarasu Matei - George, Grupa 3111C\n")
@@ -77,6 +78,8 @@ def end_program():
 poduri=[]
 numar=0
 ok=0
+x=[]
+n=0
 print("\t\t\tM E N I U")
 meniu={
 'CF':'CF - Citire date din fișier : ',
@@ -103,8 +106,8 @@ while True:
     if optiune == 'A':
         afisare()
     if optiune == 'R':
-        Plimbare(Pozitie_start,0)
-        POSIBIL(alfa,0,Pozitie)
+        x=[0]*n
+        Plimbare(ins_start,0)
     if optiune == 'I':
         info_autor()
     if optiune == 'X':
