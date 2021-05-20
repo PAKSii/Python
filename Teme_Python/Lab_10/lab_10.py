@@ -104,7 +104,7 @@ while True:
         afisare()
     if optiune == 'R':
         Plimbare(Pozitie_start,0)
-        POSIBIL(alfa,0,Pozitie_start)
+        POSIBIL(alfa,0,Pozitie)
     if optiune == 'I':
         info_autor()
     if optiune == 'X':
