@@ -7,7 +7,6 @@
 
 def citire_fisier(func):
     numar=func.readline()
-    v=[0]
     for i in range(9):
         for j in range(9):
             mat[i][j]=0 # init cu 0 sudoku grid
@@ -18,7 +17,7 @@ def citire_fisier(func):
 def afisare_date():
     for i in range(9):
         for j in range(9):
-            print(mat[i][j])
+            print(mat[i][j],"\n")
     print()
 
 '''def posibil_line(numar,)
