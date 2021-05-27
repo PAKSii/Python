@@ -9,7 +9,7 @@ def citire_fisier(func):
     numar=func.readline()
     for i in range(9):
         for j in range(9):
-            mat[i][j]=0 # init cu 0 sudoku grid
+            mat[i][j]=0
     for i in range(numar):
         v[0]=[int(x) for x in func.readline().split()]
         mat[v[0][0]-1][v[0][1]-1]=v[0][2]
