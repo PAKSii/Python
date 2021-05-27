@@ -45,7 +45,7 @@ while True:
         break
 print("\n")
 # --------------------------------- #
-# Matrice partea 1
+# Matrice 
 N=3
 mat=[[0 for i in range(N)]for j in range(N)]
 for i in range(N):
